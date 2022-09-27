@@ -1,4 +1,3 @@
-from pprint import pprint
 import requests
 import os
 
@@ -11,12 +10,6 @@ class YaUploader:
     def get_headers(self):
         return {'content-type': 'application/json', 'Authorization': f'OAuth {self.token}'}
 
-    # def get_files_list(self):
-    #     url = f'{self.host}/v1/disk/resources/files'
-    #     headers = self.get_headers()
-    #     params = {'media_type': 'document', 'fields':'items.name, items.size, items.path'}
-    #     response = requests.get(url, headers=headers, params=params)
-    #     pprint(response.json())
 
     def get_upload_link(self, path):
         url = f'{self.host}/v1/disk/resources/upload'
